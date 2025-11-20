@@ -37,6 +37,11 @@ The application showcases best practices in real-time web development, including
 - **Vercel/Netlify** - Frontend deployment platforms
 - **MongoDB Atlas** - Database hosting
 
+# Deployed Applications
+
+- **Backend URL**: https://deployment-and-devops-essentials-mugairwa.onrender.com
+- **Frontend URL**: https://deployment-and-devops-essentials-mu-ten.vercel.app/
+
 ## ✨ Features Implemented
 
 ### Core Chat Functionality

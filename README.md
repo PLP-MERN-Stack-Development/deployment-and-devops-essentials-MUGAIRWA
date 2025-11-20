@@ -56,6 +56,37 @@ The assignment includes templates for setting up GitHub Actions workflows:
 - `frontend-cd.yml`: Deploys the frontend to your chosen platform
 - `backend-cd.yml`: Deploys the backend to your chosen platform
 
+## Deployment Instructions
+
+### Prerequisites
+1. GitHub repository with MERN stack application
+2. Accounts on Vercel (frontend) and Render (backend)
+3. MongoDB Atlas database
+
+### Backend Deployment (Render)
+1. Connect your GitHub repository to Render
+2. Set build command: `npm install`
+3. Set start command: `npm start`
+4. Add environment variables from `.env.example`
+5. Deploy
+
+### Frontend Deployment (Vercel)
+1. Connect your GitHub repository to Vercel
+2. Set build command: `npm run build`
+3. Set output directory: `dist`
+4. Add environment variables from `.env.example`
+5. Deploy
+
+### CI/CD Setup
+1. GitHub Actions workflows are configured in `.github/workflows/`
+2. Set up repository secrets for Vercel and Render API keys
+3. Workflows will automatically deploy on push to main and releases
+
+## Deployed Applications
+
+- **Backend URL**: https://deployment-and-devops-essentials-mugairwa.onrender.com
+- **Frontend URL**: https://deployment-and-devops-essentials-mu-ten.vercel.app/
+
 ## Submission
 
 Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
@@ -74,4 +105,4 @@ Your work will be automatically submitted when you push to your GitHub Classroom
 - [Render Documentation](https://render.com/docs)
 - [Railway Documentation](https://docs.railway.app/)
 - [Vercel Documentation](https://vercel.com/docs)
-- [Netlify Documentation](https://docs.netlify.com/) 
+- [Netlify Documentation](https://docs.netlify.com/)
