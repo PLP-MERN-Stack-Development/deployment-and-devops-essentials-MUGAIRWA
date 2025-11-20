@@ -11,22 +11,31 @@ The application showcases best practices in real-time web development, including
 ## 🛠️ Tech Stack
 
 ### Frontend
-- **React 18** - Modern JavaScript library for building user interfaces
+- **React 19** - Modern JavaScript library for building user interfaces
 - **Vite** - Fast build tool and development server
 - **TailwindCSS** - Utility-first CSS framework for styling
+- **Clerk** - Authentication and user management
 - **Socket.io Client** - Real-time bidirectional communication
+- **Axios** - HTTP client for API requests
 
 ### Backend
 - **Node.js** - JavaScript runtime environment
 - **Express.js** - Web application framework
 - **Socket.io** - Real-time communication library
-- **Multer** - Middleware for handling file uploads
+- **MongoDB Atlas** - Cloud database service
+- **Mongoose** - MongoDB object modeling
 - **CORS** - Cross-origin resource sharing
 
 ### Development Tools
 - **Nodemon** - Automatic server restart during development
 - **ESLint** - Code linting and formatting
 - **Vite Plugin React** - React integration for Vite
+
+### Deployment & DevOps
+- **GitHub Actions** - CI/CD pipelines
+- **Render/Railway/Heroku** - Backend deployment platforms
+- **Vercel/Netlify** - Frontend deployment platforms
+- **MongoDB Atlas** - Database hosting
 
 ## ✨ Features Implemented
 
@@ -66,28 +75,35 @@ The application showcases best practices in real-time web development, including
 ## 📁 Project Structure
 
 ```
-real-time-communication-with-socket-io-MUGAIRWA/
+deployment-and-devops-essentials-MUGAIRWA/
 ├── client/                          # React frontend application
 │   ├── public/                      # Static assets
-│   │   └── notification.mp3         # Notification sound file
 │   ├── src/
 │   │   ├── components/              # Reusable UI components
-│   │   ├── socket/                  # Socket.io client configuration
-│   │   │   └── socket.js            # Socket connection and event handlers
+│   │   ├── hooks/                   # Custom React hooks
+│   │   ├── lib/                     # Utility libraries
+│   │   ├── pages/                   # Page components
 │   │   ├── App.jsx                  # Main application component
 │   │   ├── index.css                # Global styles with TailwindCSS
 │   │   └── main.jsx                 # Application entry point
 │   ├── index.html                   # HTML template
 │   ├── package.json                 # Client dependencies and scripts
-│   └── vite.config.js               # Vite configuration
+│   ├── vite.config.js               # Vite configuration
+│   └── README.md                    # Frontend documentation
 ├── server/                          # Node.js backend application
-│   ├── server.js                    # Main server file with Socket.io setup
-│   ├── package.json                 # Server dependencies and scripts
-│   └── uploads/                     # File upload storage directory
-├── uploads/                         # Shared uploads directory
-├── Week5-Assignment.md              # Assignment specifications
+│   ├── src/
+│   │   ├── config/                  # Database and configuration
+│   │   ├── controllers/             # Route controllers
+│   │   ├── middleware/              # Express middleware
+│   │   ├── models/                  # Mongoose models
+│   │   ├── routes/                  # API routes
+│   │   ├── utils/                   # Utility functions
+│   │   └── server.js                # Main server file
+│   └── package.json                 # Server dependencies and scripts
+├── .github/workflows/               # GitHub Actions CI/CD workflows
+├── Week7-Assignment.md              # Assignment specifications
 ├── README.md                        # Project documentation
-└── package-lock.json                # Lockfile for root dependencies
+└── TODO.md                          # Task tracking
 ```
 
 ## 🚀 Setup Instructions
@@ -95,14 +111,16 @@ real-time-communication-with-socket-io-MUGAIRWA/
 ### Prerequisites
 - Node.js (v18 or higher)
 - npm or yarn package manager
-- Modern web browser with Web Notifications API support
+- MongoDB Atlas account
+- Clerk account for authentication
+- Modern web browser
 
 ### Installation
 
 1. **Clone the repository**
    ```bash
    git clone <repository-url>
-   cd real-time-communication-with-socket-io-MUGAIRWA
+   cd deployment-and-devops-essentials-MUGAIRWA
    ```
 
 2. **Install server dependencies**
@@ -117,11 +135,23 @@ real-time-communication-with-socket-io-MUGAIRWA/
    npm install
    ```
 
-4. **Environment Configuration (Optional)**
-   Create a `.env` file in the server directory:
+4. **Environment Configuration**
+   Create `.env` files in both client and server directories:
+
+   **Server (.env)**
    ```env
    PORT=5000
+   MONGODB_URI=mongodb+srv://...
+   CLERK_PUBLISHABLE_KEY=pk_test_...
+   CLERK_SECRET_KEY=sk_test_...
    CLIENT_URL=http://localhost:5173
+   NODE_ENV=development
+   ```
+
+   **Client (.env.local)**
+   ```env
+   VITE_CLERK_PUBLISHABLE_KEY=pk_test_...
+   VITE_API_BASE_URL=http://localhost:5000
    ```
 
 ### Running the Application
@@ -251,26 +281,6 @@ npm run build
 cd server
 npm start
 ```
-
-## 📸 Screenshot
-### Application Interface
-![Chat Interface](./screenshots/image-1.png)
-*Main chat interface showing messages, user list, and room selection*
-
-### Private Messaging
-![Private Messages](./screenshots/image.png)
-*Private messaging feature with user selection*
-
-### File Sharing
-![File Upload](./screenshots/fileupload.png)
-*File and image sharing capabilities*
-
-### Mobile Responsive
-![Mobile View](./screenshots/mobileresponsive.png)
-*Responsive design on mobile devices*
-
-
-
 
 ## 🤝 Contributing
 
